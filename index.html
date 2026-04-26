@@ -3,220 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greenishworld</title>
-
-  <!-- Swiper CSS for carousel -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <title>Website Under Construction</title>
 
   <style>
-    body { margin:0; font-family: Arial, sans-serif; }
-    header { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#034d4d; color:#fff; }
-    nav a { color:#fff; margin:0 10px; text-decoration:none; }
-
-    /* HERO CAROUSEL */
-    .swiper { height:80vh; }
-    .swiper-slide {
-      background-size: cover;
-      background-position: center;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      text-align:center;
-      position:relative;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #145a32, #27ae60);
+      color: #fff;
+      text-align: center;
     }
 
-    .swiper-slide::before {
-      content:"";
-      position:absolute;
-      width:100%; height:100%;
-      top:0; left:0;
+    .container {
+      max-width: 600px;
+      padding: 20px;
     }
 
-    .hero-content {
-      position:relative;
-      z-index:1;
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
     }
-
-    section { padding:30px 10px; }
-    .programs { text-align:center; }
-    .program-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
-
-    .card { padding:15px; background:#f4f4f4; border-radius:10px; }
-
-    .card img {
-      width:100%;
-      height:180px;
-      object-fit:cover;
-      border-radius:10px;
-    }
-
-    .cta { background:#035b61; color:#fff; text-align:center; }
 
     p {
       font-size: 18px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color:#020e02;
+      line-height: 1.6;
     }
 
-    .justified-text {
-  text-align: justify;
-  line-height: 1.6;
-   }
-    footer { background:#222; color:#fff; text-align:center; padding:20px; }
-
-    button { padding:10px 20px; border:none; background:#0aa705; color:#fff; cursor:pointer; }
-
-    /* GALLERY PREVIEW */
-    .gallery-preview img {
-      width:100%;
-      height:200px;
-      object-fit:cover;
-      border-radius:10px;
+    .loader {
+      margin: 30px auto;
+      width: 60px;
+      height: 60px;
+      border: 6px solid rgba(255,255,255,0.3);
+      border-top: 6px solid #fff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
     }
 
-    @media(max-width:768px){ }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .contact {
+      margin-top: 20px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
   </style>
 </head>
 <body>
 
-<header>
-  <h2>Greenish Rural Empowerment and Health Foundation</h2>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#programs">Programs</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <div class="container">
+    <h1>🚧 Under Construction</h1>
+    <p>
+      Our website is currently being built to serve you better. 
+      We are working hard to bring you an improved experience.
+    </p>
 
-<!-- HERO CAROUSEL -->
-<div class="swiper">
-  <div class="swiper-wrapper">
+    <div class="loader"></div>
 
-    <div class="swiper-slide" style="background-image:url('images/hero3.png')">
-      <div class="hero-content">
-        <h1>Join Us in Making Impact </h1>
-        
-      </div>
-    </div>
-
-    <div class="swiper-slide" style="background-image:url('images/hero1.jpg')">
-      <div class="hero-content">
-        <h1>Empowering Communities</h1>
-      </div>
-    </div>
-
-    <div class="swiper-slide" style="background-image:url('images/hero2.png')">
-      <div class="hero-content">
-        
-      </div>
-    </div>
-
+    <p class="contact">
+      For inquiries, contact us at:<br>
+      <strong>info@greenishfoundation.org</strong>
+    </p>
   </div>
-
-  <!-- Navigation -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-</div>
-
-<section id="about" class="about">
-  <h2>About Us</h2>
-  <p class="justified-text">Greenish World Empowerment and Health Foundation is a Non-profit organization committed to Promoting Climate-Smart Agriculture for farmers, students and rural youth and supporting sustainable farming practices that enhance productivity, climate resilience, and environmental protection. We are committed to improving lives through impactful initiatives. Established the Greenish World Empire Network—a youth-led community championing sustainable farming practices 
-This project marks the beginning of a global youth movement for climate-resilient agriculture. 
-What's Next? The Greenish World Empire Network will continue to grow—connecting, training, and inspiring youth to lead in climate-smart agriculture. This is just the beginning. We invite all partners, organizations, and youth-led movements to collaborate with us in scaling this impact. 
-Special Thanks To the European Union, Global Youth Mobilization, our facilitators, school partners, and every single youth who believed in this mission—thank you for making this vision a reality. 
-Let's keep the momentum going. Let's keep planting the seeds of change. Let's keep mobilizing for climate.  
-#YouthMobilize #YouthLeadsTheWay #YouthMobilizationFund #ClimateAction #YouthClimateimpact</p>
-
-<br>
-<a href="about-founder.html"><button>About The Founder</button></a>
-</section>
-
-
-<section class="hero">
-  <div>
-    <h2>Promoting Climate-Smart Agriculture in Africa</h2>
-    <p>Join us in creating impact</p>
-    <button onclick="scrollToSection('programs')">Our Programs</button>
-  </div>
-</section>
-
-
-
-<section id="programs" class="programs">
-  <h2>Our Programs</h2>
-  <div class="program-grid">
-
-    <div class="card">
-      <img src="images/program2.png">
-      <h3>Agriculture</h3>
-    </div>
-
-    <div class="card">
-      <img src="images/program1.png">
-      <h3>Education</h3>
-    </div>
-
-    <div class="card">
-      <img src="images/program3.png">
-      <h3>Youth Climate Initiatives</h3>
-    </div>
-
-  </div>
-</section>
-
-<!-- GALLERY PREVIEW -->
-<section class="gallery-preview">
-  <h2>Gallery</h2>
-  <div class="program-grid">
-    <img src="images/gallery1.png">
-    <img src="images/gallery2.jpg">
-    <img src="images/gallery6.png">
-  </div>
-  <br>
-  <a href="gallery.html"><button>View Full Gallery</button></a>
-</section>
-
-<section class="cta">
-  <h2>Support Our Cause</h2>
-  <br>
-<a href="support.html"><button>Click Here</button></a>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <form onsubmit="handleSubmit(event)">
-    <input type="text" placeholder="Name" required><br><br>
-    <input type="email" placeholder="Email" required><br><br>
-    <textarea placeholder="Message"></textarea><br><br>
-    <button type="submit">Send</button>
-  </form>
-</section> 
-
-<footer>
-  <p>&copy; 2026 Greenishworld</p>
-</footer>
-
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    autoplay: { delay: 3000 },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    }
-  });
-
-  function handleSubmit(e){
-    e.preventDefault();
-    alert('Message sent!');
-  }
-</script>
 
 </body>
 </html>
-
