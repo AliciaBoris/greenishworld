@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Greenishworld</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f7f6;
+  color:#222;
+  line-height:1.7;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* TOP BAR */
+.top-bar{
+  background:#fff;
+  border-bottom:1px solid #eee;
+  font-size:12px;
+}
+
+.top-bar .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:6px 0;
+  flex-wrap:wrap;
+}
+
+/* HEADER */
+header{
+  background:#034d4d;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:999;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+
+header .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 0;
+}
+
+header h2{
+  margin:0;
+  font-size:20px;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:18px;
+  font-size:14px;
+}
+
+/* HERO */
+.hero{
+  height:55vh;
+  background:url('images/about-hero.jpg') center/cover no-repeat;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding:20px;
+}
+
+.hero h1{
+  margin:0;
+  font-size:42px;
+}
+
+/* MAIN CONTENT */
+section{
+  padding:60px 0;
+}
+
+.card{
+  background:#fff;
+  padding:35px;
+  border-radius:12px;
+  box-shadow:0 5px 18px rgba(0,0,0,0.07);
+  margin-bottom:30px;
+}
+
+h2{
+  color:#034d4d;
+  margin-top:0;
+}
+
+ul{
+  padding-left:20px;
+}
+
+li{
+  margin-bottom:10px;
+}
+
+/* TWO COLUMN */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+/* BUTTON */
+.back{
+  text-align:center;
+  padding-bottom:60px;
+}
+
+.back a{
+  display:inline-block;
+  text-decoration:none;
+  background:#0aa705;
+  color:#fff;
+  padding:14px 28px;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  background:#222;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.top-bar .container,
+header .container{
+  flex-direction:column;
+  text-align:center;
+}
+
+nav{
+  margin-top:10px;
+}
+
+.hero{
+  height:42vh;
+}
+
+.hero h1{
+  font-size:30px;
+}
+
+.grid{
+  grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+<div class="container">
+<span>📞 +234 800 000 0000</span>
+<span>✉ info@greenishworld.org</span>
+<span>📍 Abuja, Nigeria</span>
+</div>
+</div>
+
+<!-- HEADER -->
+<header>
+<div class="container">
+<h2>Greenish Rural Empowerment and Health Foundation</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#programs">Programs</a>
+<a href="gallery.html">Gallery</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+<h1>About Us</h1>
+<p>Empowering Communities • Improving Lives • Building Sustainability</p>
+</div>
+</section>
+
+<!-- CONTENT -->
+<section>
+<div class="container">
+
+<div class="card">
+<h2>Who We Are</h2>
+<p>
+Greenish Rural Empowerment and Health Foundation is a registered nonprofit organization dedicated to advancing inclusive rural development, youth and women empowerment, and community health improvement in underserved communities across Nigeria.
+</p>
+
+<p>
+We work to address the interconnected challenges of poverty, unemployment, limited access to healthcare, and climate vulnerability through integrated, community-based interventions that promote sustainable development and long-term resilience.
+</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h2>Our Mission</h2>
+<p>
+To empower youth and women with practical skills, improve access to basic health services and awareness, and promote sustainable livelihoods that strengthen rural communities.
+</p>
+</div>
+
+<div class="card">
+<h2>Our Vision</h2>
+<p>
+A resilient society where youth and women are empowered, healthy, and economically independent, contributing actively to sustainable community development.
+</p>
+</div>
+
+</div>
+
+<div class="card">
+<h2>What We Do</h2>
+
+<p><strong>🌱 Youth & Women Empowerment</strong></p>
+<ul>
+<li>Climate-smart agriculture</li>
+<li>Agribusiness and entrepreneurship</li>
+<li>Digital and green skills development</li>
+<li>Vocational and practical training for employment</li>
+</ul>
+
+<p><strong>Community Health & Wellbeing</strong></p>
+<ul>
+<li>Medical outreach and health screening programs</li>
+<li>Eye care awareness and basic vision screening sensitization</li>
+<li>Maternal and community health education</li>
+<li>Hygiene and preventive health awareness</li>
+<li>Menstrual hygiene education and support for women and girls</li>
+</ul>
+
+<p><strong>Climate Action & Sustainable Livelihoods</strong></p>
+<p>
+We promote climate-smart practices that strengthen rural resilience, food security, and sustainable income generation through environmentally responsible approaches.
+</p>
+</div>
+
+<div class="card">
+<h2>Our Approach</h2>
+<p>
+We adopt a holistic, participatory, and community-led approach that ensures inclusion, ownership, and sustainability. Our programs are designed with beneficiaries and implemented through practical, hands-on engagement to guarantee real-life impact.
+</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h2>Our Impact</h2>
+<ul>
+<li>Youth and women trained in practical livelihood skills</li>
+<li>Community-based health awareness and outreach activities conducted</li>
+<li>Improved knowledge of preventive healthcare and hygiene practices</li>
+<li>Increased adoption of sustainable agricultural practices</li>
+<li>Strengthened resilience among rural households</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Our Partnership</h2>
+<p>
+We are proud to collaborate with the Global Youth Mobilization (GYM) initiative, a global partnership supporting youth-led solutions for recovery, resilience, and sustainable development.
+</p>
+
+<p>
+This partnership strengthens our ability to deliver impactful, locally driven, and globally aligned programs in empowerment, health, and climate action.
+</p>
+</div>
+
+</div>
+
+<div class="card">
+<h2>Our Focus Areas (SDG Alignment)</h2>
+<ul>
+<li>SDG 1: No Poverty</li>
+<li>SDG 3: Good Health and Well-being</li>
+<li>SDG 5: Gender Equality</li>
+<li>SDG 8: Decent Work and Economic Growth</li>
+<li>SDG 13: Climate Action</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Why We Exist</h2>
+<p>
+We exist to bridge the gap between poverty and opportunity, between poor health access and community wellbeing, and between climate challenges and sustainable solutions. Our goal is to build stronger, healthier, and more resilient rural communities through empowerment and action.
+</p>
+</div>
+
+<div class="card">
+<h2>Call to Action</h2>
+<p>Join us in transforming lives and building sustainable communities.</p>
+
+<ul>
+<li>Partner with us</li>
+<li>Support our programs</li>
+<li>Volunteer with us</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<div class="back">
+<a href="index.html">Back to Home</a>
+</div>
+
+<footer>
+<h3>&copy; 2026 Greenishworld</h3>
+</footer>
+
+</body>
+</html>

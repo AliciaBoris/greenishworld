@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greenishworld</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  line-height:1.6;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* TOP CONTACT BAR */
+.top-bar{
+  background:#fff;
+  color:#333;
+  font-size:12px;
+  border-bottom:2px solid #eee;
+}
+
+.top-bar .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:6px 0;
+  flex-wrap:wrap;
+}
+
+/* HEADER */
+header{
+  background:#034d4d;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:999;
+  box-shadow:0 4px 8px rgba(0,0,0,0.15);
+}
+
+header .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 0;   
+}
+
+header h3{
+  font-size:18px;
+  margin:0;
+}
+
+nav a{
+  color:#fff;
+  margin-left:15px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* HERO */
+.swiper{
+  height:70vh;
+}
+
+.swiper-slide{
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-align:center;
+  position:relative;
+}
+
+.swiper-slide::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+  padding:20px;
+}
+
+section{
+  padding:60px 0;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:20px;
+  color:#0d0e0e;
+}
+
+.justified-text{
+  text-align:justify;
+}
+
+/* PROGRAMS */
+.program-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#f4f4f4;
+  border-radius:10px;
+  overflow:hidden;
+  text-align:center;
+  padding-bottom:15px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card a{
+  text-decoration:none;
+  color:#000;
+  display:block;
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+/* GALLERY */
+.gallery-preview img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* CTA */
+.cta{
+  background:#001011;
+  color:#fff;
+  text-align:center;
+  padding:60px 20px;
+}
+
+button{
+  padding:20px 30px;
+  border:none;
+  background:#0aa705;
+  color:#fff;
+  cursor:pointer;
+  border-radius:5px;
+}
+
+/* FORM */
+form{
+  max-width:500px;
+  margin:auto;
+}
+
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+footer{
+  background:#222;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .top-bar .container{
+    flex-direction:column;
+    text-align:center;
+    gap:5px;
+  }
+
+  header .container{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  nav{
+    margin-top:10px;
+  }
+
+  .swiper{
+    height:50vh;
+  }
+
+  h2{
+    font-size:20px;
+  }
+
+  p{
+    font-size:14px;
+  }
+
+  header h3{
+    font-size:15px;
+  }
+}
+
+.projects-section{
+  padding:70px 0;
+  background:#f7f7f7;
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.project-card{
+  background:#fff;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.project-card:hover{
+  transform:translateY(-6px);
+}
+
+.project-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.project-card .content{
+  padding:20px;
+}
+
+.project-card h3{
+  margin-top:0;
+  color:#034d4d;
+  font-size:18px;
+}
+
+/* VALUES */
+.values-section{
+  background:#034d4d;
+  color:#fff;
+  padding:70px 0;
+}
+
+.values-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.value-box{
+  background:rgba(255,255,255,0.08);
+  padding:25px;
+  border-radius:10px;
+}
+
+.value-box h3{
+  margin-top:0;
+  color:#fff;
+}
+
+/* COUNTER SECTION */
+.counter-section{
+  background:url('images/farmers-bg.jpg') center/cover no-repeat;
+  position:relative;
+  padding:90px 20px;
+  color:#fff;
+  text-align:center;
+}
+
+.counter-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+}
+
+.counter-inner{
+  position:relative;
+  z-index:2;
+}
+
+.counter-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  margin-top:35px;
+}
+
+.counter-box{
+  background:rgba(10, 10, 10, 0.08);
+  padding:30px 20px;
+  border-radius:12px;
+}
+
+.counter-box h2{
+  color:#fff;
+  font-size:42px;
+  margin:0;
+}
+
+.counter-box p{
+  margin:8px 0 0;
+  font-size:16px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.project-card img{
+  height:180px;
+}
+
+.counter-box h2{
+  font-size:32px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- WHITE SPACE ABOVE HEADER -->
+<div class="top-bar">
+  <div class="container">
+    <span>📞 +234 800 000 0000</span>
+    <span>✉ info@greenishworld.org</span>
+    <span>📍 Abia State, Nigeria</span>
+  </div>
+</div>
+
+<header>
+<div class="container">
+  <h3>Greenish Rural Empowerment and Health Foundation</h3>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#programs">Programs</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
+</header>
+
+<!-- HERO -->
+<div class="swiper">
+<div class="swiper-wrapper">
+
+<div class="swiper-slide" style="background-image:url('images/hero3.png')">
+<div class="hero-content"></div>
+</div>
+
+<div class="swiper-slide" style="background-image:url('images/hero1.jpg')">
+<div class="hero-content"></div>
+</div>
+
+<div class="swiper-slide" style="background-image:url('images/hero2.png')">
+<div class="hero-content"></div>
+</div>
+
+</div>
+
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+</div>
+
+<!-- ABOUT -->
+<section>
+<div class="container">
+<h2>About Us</h2>
+
+<p class="justified-text">
+About Us Greenish Rural Empowerment and Health Foundation is a registered nonprofit organization dedicated to advancing inclusive rural development, youth and women empowerment, and community health improvement in underserved communities across Nigeria. We work to address the interconnected challenges of poverty, unemployment, limited access to healthcare, and climate vulnerability through integrated, community-based interventions that promote sustainable development and long-term resilience.
+<a href="about.html" style="color:#0aa705; font-weight:bold; text-decoration:none;">
+See more...
+</a>
+</p>
+
+<a href="about-founder.html"><button>About The Founder</button></a>
+
+<section class="projects-section">
+<div class="container">
+
+<h2>Landmark Projects</h2>
+
+<div class="projects-grid">
+
+<div class="project-card">
+<img src="images/training-pic1.png">
+<div class="content">
+<h3>Smart Climate Agriculture Training</h3>
+<p>Equipping Rural farmers with modern techniques for better yields and sustainable farming.</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="images/training-pic2.png">
+<div class="content">
+<h3>Women and Youth Empowerment Initiatives</h3>
+<p>Providing aid to Women, Children and Youths through education, trainings and financial opportunities self reliance.</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="images/training-pic3.png">
+<div class="content">
+<h3>Youth Green Enterprise Program</h3>
+<p>Training young people in agribusiness, recycling and climate-smart innovation.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<section class="values-section">
+<div class="container">
+
+<h2 style="color:#fff;">Our Values</h2>
+
+<div class="values-grid">
+
+<div class="value-box">
+<h3>Our Vision</h3>
+<p>To build thriving rural communities through empowerment, health and sustainable agriculture.</p>
+</div>
+
+<div class="value-box">
+<h3>Our Mission</h3>
+<p>To improve livelihoods through practical training, partnerships and inclusive development.</p>
+</div>
+
+<div class="value-box">
+<h3>Integrity</h3>
+<p>We serve communities transparently, responsibly and with compassion.</p>
+</div>
+
+<div class="value-box">
+<h3>Innovation</h3>
+<p>We embrace modern solutions that create lasting impact.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="counter-section">
+<div class="counter-inner container">
+
+<h2 style="color:#fff;">Our Growing Impact</h2>
+<p>Thousands of lives transformed through training and empowerment</p>
+
+<div class="counter-grid">
+
+<div class="counter-box">
+<h2 class="count" data-target="15000">0</h2>
+<p>Farmers Trained</p>
+</div>
+
+<div class="counter-box">
+<h2 class="count" data-target="450">0</h2>
+<p>Communities Reached</p>
+</div>
+
+<div class="counter-box">
+<h2 class="count" data-target="1200">0</h2>
+<p>Youths Empowered</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+</section>
+<br>
+
+
+
+</div>
+
+
+<!-- PROGRAMS -->
+<section id="programs">
+<div class="container">
+<h1>Our Programs</h1>
+
+<div class="program-grid">
+
+<div class="card">
+<a href="agriculture.html">
+<img src="images/program2.png">
+<h3>Agriculture</h3>
+</a>
+</div>
+
+<div class="card">
+<a href="education.html">
+<img src="images/program1.png">
+<h3>Education</h3>
+</a>
+</div>
+
+<div class="card">
+<a href="climate.html">
+<img src="images/program3.png">
+<h3>Youth Climate Initiatives</h3>
+</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-preview">
+<div class="container">
+<h2>Gallery</h2>
+
+<div class="program-grid">
+<img src="images/gallery1.png">
+<img src="images/gallery2.jpg">
+<img src="images/gallery6.png">
+</div>
+
+<br>
+
+<a href="gallery.html"><button>View Full Gallery</button></a>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<h3>Support Our Cause</h3>
+<h3>Our vision is only made possible through your donation</h3>
+<a href="support.html"><button>Click Here</button></a>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="container">
+<h2>Contact Us</h2>
+
+<form onsubmit="handleSubmit(event)">
+<input type="text" placeholder="Name" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Message"></textarea>
+<button type="submit">Send</button>
+</form>
+
+</div>
+</section>
+
+<footer>
+<h3>&copy; 2026 Greenishworld</h3>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+const swiper = new Swiper('.swiper', {
+  loop:true,
+  autoplay:{ delay:3000 },
+  navigation:{
+    nextEl:'.swiper-button-next',
+    prevEl:'.swiper-button-prev'
+  }
+});
+
+function handleSubmit(e){
+  e.preventDefault();
+  alert('Message sent!');
+}
+
+const counters = document.querySelectorAll('.count');
+
+counters.forEach(counter => {
+
+function updateCount(){
+
+const target = +counter.getAttribute('data-target');
+const current = +counter.innerText;
+
+const increment = Math.ceil(target / 120);
+
+if(current < target){
+counter.innerText = current + increment;
+setTimeout(updateCount,20);
+}else{
+counter.innerText = target.toLocaleString();
+}
+
+}
+
+updateCount();
+
+});
+
+</script>
+
+</body>
+</html>

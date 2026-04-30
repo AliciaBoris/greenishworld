@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - Greenish World</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#f4f7f6;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:#0a625b;
+  color:#fff;
+  flex-wrap:wrap;
+}
+
+header a{
+  color:#fff;
+  text-decoration:none;
+}
+
+h1{
+  text-align:center;
+  margin:30px 0 10px;
+  color:#0a625b;
+}
+
+.sub{
+  text-align:center;
+  color:#1f1e1e;
+  margin-bottom:25px;
+}
+
+/* CAROUSEL */
+.gallery-wrapper{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.carousel{
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.slide{
+  display:none;
+  position:relative;
+}
+
+.slide.active{
+  display:block;
+}
+
+.slide img{
+  width:100%;
+  height:550px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:0.4s ease;
+}
+
+/* HOVER BOLD EFFECT */
+.slide img:hover{
+  transform:scale(1.03);
+  filter:contrast(120%) brightness(105%);
+}
+
+/* CAPTION */
+.caption{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:18px;
+  background:linear-gradient(transparent, rgba(0,0,0,0.75));
+  color:#fff;
+}
+
+.caption h3{
+  margin-bottom:5px;
+}
+
+/* NAV BUTTONS */
+.nav-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.45);
+  color:#fff;
+  border:none;
+  font-size:28px;
+  padding:12px 16px;
+  cursor:pointer;
+  z-index:5;
+}
+
+.prev{
+  left:10px;
+}
+
+.next{
+  right:10px;
+}
+
+.nav-btn:hover{
+  background:#0a625b;
+}
+
+/* DOTS */
+.dots{
+  text-align:center;
+  margin-top:18px;
+}
+
+.dot{
+  height:12px;
+  width:12px;
+  margin:0 5px;
+  background:#bbb;
+  display:inline-block;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.dot.active{
+  background:#0a625b;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  z-index:1000;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.modal-content{
+  background:#fff;
+  max-width:900px;
+  width:100%;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.modal img{
+  width:100%;
+  max-height:500px;
+  object-fit:cover;
+}
+
+.modal-text{
+  padding:20px;
+}
+
+.close{
+  position:absolute;
+  top:18px;
+  right:25px;
+  color:#fff;
+  font-size:38px;
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+header{
+  text-align:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.slide img{
+  height:320px;
+}
+
+h1{
+  font-size:28px;
+}
+
+.caption h3{
+  font-size:18px;
+}
+
+.nav-btn{
+  font-size:22px;
+  padding:8px 12px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Greenish Foundation</h2>
+<a href="index.html">Home</a>
+</header>
+
+<h1>Gallery</h1>
+<p class="sub">Our Impact moments, Empowerment Programs and Community Outreach.</p>
+
+<div class="gallery-wrapper">
+
+<div class="carousel">
+
+<button class="nav-btn prev" onclick="changeSlide(-1)">❮</button>
+<button class="nav-btn next" onclick="changeSlide(1)">❯</button>
+
+<!-- Slide 1 -->
+<div class="slide active">
+<img src="images/gallery1.png" onclick="openModal(0)">
+<div class="caption">
+<h3>Community Empowerment</h3>
+<p>Training and skill development session.</p>
+</div>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide">
+<img src="images/gallery2.jpg" onclick="openModal(1)">
+<div class="caption">
+<h3>Health Outreach</h3>
+<p>Providing health awareness and screening.</p>
+</div>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+<img src="images/gallery3.png" onclick="openModal(2)">
+<div class="caption">
+<h3>Youth Climate Action</h3>
+<p>Youth leading environmental change.</p>
+</div>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide">
+<img src="images/gallery4.png" onclick="openModal(3)">
+<div class="caption">
+<h3>Women Empowerment</h3>
+<p>Supporting women-led growth initiatives.</p>
+</div>
+</div>
+
+<!-- Slide 5 -->
+<div class="slide">
+<img src="images/gallery5.png" onclick="openModal(4)">
+<div class="caption">
+<h3>Agriculture Project</h3>
+<p>Promoting climate-smart farming.</p>
+</div>
+</div>
+
+<!-- Slide 6 -->
+<div class="slide">
+<img src="images/gallery6.jpg" onclick="openModal(5)">
+<div class="caption">
+<h3>Community Engagement</h3>
+<p>Building stronger communities together.</p>
+</div>
+</div>
+
+<!-- Slide 7 -->
+<div class="slide">
+<img src="images/gallery7.png" onclick="openModal(6)">
+<div class="caption">
+<h3>Community Empowerment</h3>
+<p>Training and skill development session.</p>
+</div>
+</div>
+
+<!-- Slide 8 -->
+<div class="slide">
+<img src="images/gallery8.png" onclick="openModal(7)">
+<div class="caption">
+<h3>Health Outreach</h3>
+<p>Providing health awareness and screening.</p>
+</div>
+</div>
+
+<!-- Slide 9 -->
+<div class="slide">
+<img src="images/gallery9.png" onclick="openModal(8)">
+<div class="caption">
+<h3>Youth Climate Action</h3>
+<p>Youth leading environmental change.</p>
+</div>
+</div>
+
+<!-- Slide 10 -->
+<div class="slide">
+<img src="images/gallery10.png" onclick="openModal(9)">
+<div class="caption">
+<h3>Women Empowerment</h3>
+<p>Supporting women-led growth initiatives.</p>
+</div>
+</div>
+
+<!-- Slide 11 -->
+<div class="slide">
+<img src="images/gallery11.png" onclick="openModal(10)">
+<div class="caption">
+<h3>Agriculture Project</h3>
+<p>Promoting climate-smart farming.</p>
+</div>
+</div>
+
+<!-- Slide 12 -->
+<div class="slide">
+<img src="images/gallery12.png" onclick="openModal(11)">
+<div class="caption">
+<h3>Community Engagement</h3>
+<p>Building stronger communities together.</p>
+</div>
+</div>
+
+<!-- Slide 13 -->
+<div class="slide active">
+<img src="images/gallery13.png" onclick="openModal(12)">
+<div class="caption">
+<h3>Community Empowerment</h3>
+<p>Training and skill development session.</p>
+</div>
+</div>
+
+<!-- Slide 14 -->
+<div class="slide">
+<img src="images/gallery14.png" onclick="openModal(13)">
+<div class="caption">
+<h3>Health Outreach</h3>
+<p>Providing health awareness and screening.</p>
+</div>
+</div>
+
+<!-- Slide 15 -->
+<div class="slide">
+<img src="images/gallery15.png" onclick="openModal(14)">
+<div class="caption">
+<h3>Youth Climate Action</h3>
+<p>Youth leading environmental change.</p>
+</div>
+</div>
+
+<!-- Slide 16 -->
+<div class="slide">
+<img src="images/gallery16.png" onclick="openModal(15)">
+<div class="caption">
+<h3>Women Empowerment</h3>
+<p>Supporting women-led growth initiatives.</p>
+</div>
+</div>
+
+<!-- Slide 17 -->
+<div class="slide">
+<img src="images/gallery17.png" onclick="openModal(16)">
+<div class="caption">
+<h3>Agriculture Project</h3>
+<p>Promoting climate-smart farming.</p>
+</div>
+</div>
+
+<!-- Slide 17 -->
+<div class="slide">
+<img src="images/gallery18.jpg" onclick="openModal(17)">
+<div class="caption">
+<h3>Community Engagement</h3>
+<p>Building stronger communities together.</p>
+</div>
+</div>
+
+
+</div>
+
+<div class="dots">
+<span class="dot active" onclick="goToSlide(0)"></span>
+<span class="dot" onclick="goToSlide(1)"></span>
+<span class="dot" onclick="goToSlide(2)"></span>
+<span class="dot" onclick="goToSlide(3)"></span>
+<span class="dot" onclick="goToSlide(4)"></span>
+<span class="dot" onclick="goToSlide(5)"></span>
+</div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<span class="close" onclick="closeModal()">&times;</span>
+
+<div class="modal-content">
+<img id="modalImg">
+
+<div class="modal-text">
+<h2 id="modalTitle"></h2>
+<p id="modalDesc"></p>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+let current = 0;
+
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+const data = [
+{
+title:'Community Empowerment',
+desc:'We equip youth and women with practical skills that create income and independence.',
+img:'images/gallery1.png'
+},
+{
+title:'Health Outreach',
+desc:'Our team carries out health screening and public health sensitization programs.',
+img:'images/gallery2.jpg'
+},
+{
+title:'Youth Climate Action',
+desc:'Young people driving environmental awareness and sustainability.',
+img:'images/gallery3.png'
+},
+{
+title:'Women Empowerment',
+desc:'Programs designed to strengthen women economically and socially.',
+img:'images/gallery4.png'
+},
+{
+title:'Agriculture Project',
+desc:'Training farmers in climate-smart agriculture techniques.',
+img:'images/gallery5.jpg'
+},
+{
+title:'Community Engagement',
+desc:'Partnering with local communities for long-term development.',
+img:'images/gallery6.jpg'
+}
+];
+
+function showSlide(index){
+slides.forEach(s => s.classList.remove('active'));
+dots.forEach(d => d.classList.remove('active'));
+
+slides[index].classList.add('active');
+dots[index].classList.add('active');
+}
+
+function changeSlide(step){
+current += step;
+
+if(current >= slides.length) current = 0;
+if(current < 0) current = slides.length - 1;
+
+showSlide(current);
+}
+
+function goToSlide(index){
+current = index;
+showSlide(current);
+}
+
+/* AUTO PLAY */
+setInterval(()=>{
+changeSlide(1);
+},4000);
+
+/* MODAL */
+function openModal(index){
+document.getElementById('modal').style.display='flex';
+document.getElementById('modalImg').src = data[index].img;
+document.getElementById('modalTitle').innerText = data[index].title;
+document.getElementById('modalDesc').innerText = data[index].desc;
+}
+
+function closeModal(){
+document.getElementById('modal').style.display='none';
+}
+</script>
+
+</body>
+</html>
