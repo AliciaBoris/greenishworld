@@ -17,36 +17,66 @@ body{
   background:#f4f7f6;
 }
 
-header{
+/* TOP BAR */
+.top-bar{
+  background:#fff;
+  border-bottom:1px solid #eee;
+  font-size:12px;
+}
+
+.top-bar .container{
+  max-width:1100px;
+  margin:auto;
+  padding:6px 20px;
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  padding:15px 30px;
-  background:#0a625b;
-  color:#fff;
   flex-wrap:wrap;
 }
 
-header a{
+/* STICKY HEADER */
+header{
+  background:#034d4d;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+
+header .container{
+  max-width:1100px;
+  margin:auto;
+  padding:10px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+header h2{
+  margin:0;
+}
+
+nav a{
   color:#fff;
   text-decoration:none;
+  margin-left:16px;
+  font-size:14px;
 }
 
 h1{
   text-align:center;
-  margin:30px 0 10px;
-  color:#0a625b;
+  margin:35px 0 10px;
+  color:#034d4d;
 }
 
 .sub{
   text-align:center;
-  color:#1f1e1e;
-  margin-bottom:25px;
+  margin-bottom:30px;
+  color:#555;
 }
 
-/* CAROUSEL */
+/* GALLERY */
 .gallery-wrapper{
-  max-width:900px;
+  max-width:1150px;
   margin:auto;
   padding:20px;
 }
@@ -55,12 +85,11 @@ h1{
   position:relative;
   overflow:hidden;
   border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  box-shadow:0 10px 30px rgba(0,0,0,0.12);
 }
 
 .slide{
   display:none;
-  position:relative;
 }
 
 .slide.active{
@@ -69,34 +98,12 @@ h1{
 
 .slide img{
   width:100%;
-  height:550px;
+  height:620px;
   object-fit:cover;
   cursor:pointer;
-  transition:0.4s ease;
 }
 
-/* HOVER BOLD EFFECT */
-.slide img:hover{
-  transform:scale(1.03);
-  filter:contrast(120%) brightness(105%);
-}
-
-/* CAPTION */
-.caption{
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  padding:18px;
-  background:linear-gradient(transparent, rgba(0,0,0,0.75));
-  color:#fff;
-}
-
-.caption h3{
-  margin-bottom:5px;
-}
-
-/* NAV BUTTONS */
+/* BUTTONS */
 .nav-btn{
   position:absolute;
   top:50%;
@@ -107,39 +114,55 @@ h1{
   font-size:28px;
   padding:12px 16px;
   cursor:pointer;
-  z-index:5;
 }
 
-.prev{
-  left:10px;
-}
-
-.next{
-  right:10px;
-}
+.prev{left:10px;}
+.next{right:10px;}
 
 .nav-btn:hover{
-  background:#0a625b;
+  background:#034d4d;
 }
 
 /* DOTS */
 .dots{
   text-align:center;
   margin-top:18px;
+  flex-wrap:wrap;
 }
 
 .dot{
-  height:12px;
   width:12px;
-  margin:0 5px;
+  height:12px;
   background:#bbb;
   display:inline-block;
   border-radius:50%;
+  margin:5px;
   cursor:pointer;
 }
 
 .dot.active{
-  background:#0a625b;
+  background:#034d4d;
+}
+
+/* THUMBNAILS */
+.thumb-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+  margin-top:35px;
+}
+
+.thumb-grid img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.thumb-grid img:hover{
+  transform:scale(1.03);
 }
 
 /* MODAL */
@@ -147,64 +170,51 @@ h1{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.85);
-  z-index:1000;
+  background:rgba(0,0,0,0.88);
+  z-index:2000;
   justify-content:center;
   align-items:center;
   padding:20px;
 }
 
-.modal-content{
-  background:#fff;
-  max-width:900px;
-  width:100%;
-  border-radius:18px;
-  overflow:hidden;
-}
-
 .modal img{
-  width:100%;
-  max-height:500px;
-  object-fit:cover;
-}
-
-.modal-text{
-  padding:20px;
+  max-width:95%;
+  max-height:90vh;
+  border-radius:12px;
 }
 
 .close{
   position:absolute;
-  top:18px;
+  top:15px;
   right:25px;
   color:#fff;
-  font-size:38px;
+  font-size:40px;
   cursor:pointer;
+}
+
+footer{
+  background:#222;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
 
-header{
+.top-bar .container,
+header .container{
+  flex-direction:column;
   text-align:center;
-  justify-content:center;
-  gap:10px;
+}
+
+nav{
+  margin-top:10px;
 }
 
 .slide img{
   height:320px;
-}
-
-h1{
-  font-size:28px;
-}
-
-.caption h3{
-  font-size:18px;
-}
-
-.nav-btn{
-  font-size:22px;
-  padding:8px 12px;
 }
 
 }
@@ -213,193 +223,89 @@ h1{
 
 <body>
 
+<!-- TOP BAR -->
+<div class="top-bar">
+<div class="container">
+<span>📞 +234 800 000 0000</span>
+<span>✉ info@greenishworld.org</span>
+<span>📍 Abuja, Nigeria</span>
+</div>
+</div>
+
+<!-- HEADER -->
 <header>
-<h2>Greenish Foundation</h2>
+<div class="container">
+<h2>Greenish Rural Empowerment and Health Foundation</h2>
+
+<nav>
 <a href="index.html">Home</a>
+<a href="index.html#programs">Programs</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+</div>
 </header>
 
 <h1>Gallery</h1>
-<p class="sub">Our Impact moments, Empowerment Programs and Community Outreach.</p>
+<p class="sub">Our Impact Moments, Empowerment Programs and Community Outreach</p>
 
 <div class="gallery-wrapper">
 
+<!-- MAIN SLIDER -->
 <div class="carousel">
 
 <button class="nav-btn prev" onclick="changeSlide(-1)">❮</button>
 <button class="nav-btn next" onclick="changeSlide(1)">❯</button>
 
-<!-- Slide 1 -->
-<div class="slide active">
-<img src="images/gallery1.png" onclick="openModal(0)">
-<div class="caption">
-<h3>Community Empowerment</h3>
-<p>Training and skill development session.</p>
-</div>
-</div>
+<div class="slide active"><img src="images/gallery1.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery2.jpg" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery3.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery4.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery5.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery6.jpg" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery7.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery8.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery9.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery10.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery11.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery12.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery13.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery14.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery15.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery16.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery17.png" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery18.jpg" onclick="openModal(this.src)"></div>
 
-<!-- Slide 2 -->
-<div class="slide">
-<img src="images/gallery2.jpg" onclick="openModal(1)">
-<div class="caption">
-<h3>Health Outreach</h3>
-<p>Providing health awareness and screening.</p>
-</div>
-</div>
-
-<!-- Slide 3 -->
-<div class="slide">
-<img src="images/gallery3.png" onclick="openModal(2)">
-<div class="caption">
-<h3>Youth Climate Action</h3>
-<p>Youth leading environmental change.</p>
-</div>
-</div>
-
-<!-- Slide 4 -->
-<div class="slide">
-<img src="images/gallery4.png" onclick="openModal(3)">
-<div class="caption">
-<h3>Women Empowerment</h3>
-<p>Supporting women-led growth initiatives.</p>
-</div>
-</div>
-
-<!-- Slide 5 -->
-<div class="slide">
-<img src="images/gallery5.png" onclick="openModal(4)">
-<div class="caption">
-<h3>Agriculture Project</h3>
-<p>Promoting climate-smart farming.</p>
-</div>
-</div>
-
-<!-- Slide 6 -->
-<div class="slide">
-<img src="images/gallery6.jpg" onclick="openModal(5)">
-<div class="caption">
-<h3>Community Engagement</h3>
-<p>Building stronger communities together.</p>
-</div>
-</div>
-
-<!-- Slide 7 -->
-<div class="slide">
-<img src="images/gallery7.png" onclick="openModal(6)">
-<div class="caption">
-<h3>Community Empowerment</h3>
-<p>Training and skill development session.</p>
-</div>
-</div>
-
-<!-- Slide 8 -->
-<div class="slide">
-<img src="images/gallery8.png" onclick="openModal(7)">
-<div class="caption">
-<h3>Health Outreach</h3>
-<p>Providing health awareness and screening.</p>
-</div>
-</div>
-
-<!-- Slide 9 -->
-<div class="slide">
-<img src="images/gallery9.png" onclick="openModal(8)">
-<div class="caption">
-<h3>Youth Climate Action</h3>
-<p>Youth leading environmental change.</p>
-</div>
-</div>
-
-<!-- Slide 10 -->
-<div class="slide">
-<img src="images/gallery10.png" onclick="openModal(9)">
-<div class="caption">
-<h3>Women Empowerment</h3>
-<p>Supporting women-led growth initiatives.</p>
-</div>
-</div>
-
-<!-- Slide 11 -->
-<div class="slide">
-<img src="images/gallery11.png" onclick="openModal(10)">
-<div class="caption">
-<h3>Agriculture Project</h3>
-<p>Promoting climate-smart farming.</p>
-</div>
-</div>
-
-<!-- Slide 12 -->
-<div class="slide">
-<img src="images/gallery12.png" onclick="openModal(11)">
-<div class="caption">
-<h3>Community Engagement</h3>
-<p>Building stronger communities together.</p>
-</div>
-</div>
-
-<!-- Slide 13 -->
-<div class="slide active">
-<img src="images/gallery13.png" onclick="openModal(12)">
-<div class="caption">
-<h3>Community Empowerment</h3>
-<p>Training and skill development session.</p>
-</div>
-</div>
-
-<!-- Slide 14 -->
-<div class="slide">
-<img src="images/gallery14.png" onclick="openModal(13)">
-<div class="caption">
-<h3>Health Outreach</h3>
-<p>Providing health awareness and screening.</p>
-</div>
-</div>
-
-<!-- Slide 15 -->
-<div class="slide">
-<img src="images/gallery15.png" onclick="openModal(14)">
-<div class="caption">
-<h3>Youth Climate Action</h3>
-<p>Youth leading environmental change.</p>
-</div>
-</div>
-
-<!-- Slide 16 -->
-<div class="slide">
-<img src="images/gallery16.png" onclick="openModal(15)">
-<div class="caption">
-<h3>Women Empowerment</h3>
-<p>Supporting women-led growth initiatives.</p>
-</div>
-</div>
-
-<!-- Slide 17 -->
-<div class="slide">
-<img src="images/gallery17.png" onclick="openModal(16)">
-<div class="caption">
-<h3>Agriculture Project</h3>
-<p>Promoting climate-smart farming.</p>
-</div>
-</div>
-
-<!-- Slide 17 -->
-<div class="slide">
-<img src="images/gallery18.jpg" onclick="openModal(17)">
-<div class="caption">
-<h3>Community Engagement</h3>
-<p>Building stronger communities together.</p>
-</div>
-</div>
-
+<!-- 10 NEW PLACEHOLDERS -->
+<div class="slide"><img src="images/gallery19.jpg" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery20.jpg" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery21.jpg" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery22.jpg" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery23.jpg" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery24.jpg" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery25.jpg" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery26.jpg" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery27.jpg" onclick="openModal(this.src)"></div>
+<div class="slide"><img src="images/gallery28.jpg" onclick="openModal(this.src)"></div>
 
 </div>
 
-<div class="dots">
-<span class="dot active" onclick="goToSlide(0)"></span>
-<span class="dot" onclick="goToSlide(1)"></span>
-<span class="dot" onclick="goToSlide(2)"></span>
-<span class="dot" onclick="goToSlide(3)"></span>
-<span class="dot" onclick="goToSlide(4)"></span>
-<span class="dot" onclick="goToSlide(5)"></span>
+<!-- DOTS AUTO GENERATED -->
+<div class="dots" id="dots"></div>
+
+<!-- THUMB GRID -->
+<div class="thumb-grid">
+
+<img src="images/gallery1.png" onclick="goToSlide(0)">
+<img src="images/gallery2.jpg" onclick="goToSlide(1)">
+<img src="images/gallery3.png" onclick="goToSlide(2)">
+<img src="images/gallery4.png" onclick="goToSlide(3)">
+<img src="images/gallery5.png" onclick="goToSlide(4)">
+<img src="images/gallery6.jpg" onclick="goToSlide(5)">
+<img src="images/gallery7.png" onclick="goToSlide(6)">
+<img src="images/gallery8.png" onclick="goToSlide(7)">
+<img src="images/gallery9.png" onclick="goToSlide(8)">
+<img src="images/gallery10.png" onclick="goToSlide(9)">
+
 </div>
 
 </div>
@@ -407,95 +313,64 @@ h1{
 <!-- MODAL -->
 <div class="modal" id="modal">
 <span class="close" onclick="closeModal()">&times;</span>
-
-<div class="modal-content">
 <img id="modalImg">
-
-<div class="modal-text">
-<h2 id="modalTitle"></h2>
-<p id="modalDesc"></p>
-</div>
 </div>
 
-</div>
-</div>
+<footer>
+<h3>&copy; 2026 Greenish World</h3>
+</footer>
 
 <script>
 let current = 0;
 
 const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.getElementById('dots');
+
+/* CREATE DOTS */
+slides.forEach((slide,index)=>{
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if(index===0) dot.classList.add('active');
+  dot.onclick = ()=>goToSlide(index);
+  dotsContainer.appendChild(dot);
+});
+
 const dots = document.querySelectorAll('.dot');
 
-const data = [
-{
-title:'Community Empowerment',
-desc:'We equip youth and women with practical skills that create income and independence.',
-img:'images/gallery1.png'
-},
-{
-title:'Health Outreach',
-desc:'Our team carries out health screening and public health sensitization programs.',
-img:'images/gallery2.jpg'
-},
-{
-title:'Youth Climate Action',
-desc:'Young people driving environmental awareness and sustainability.',
-img:'images/gallery3.png'
-},
-{
-title:'Women Empowerment',
-desc:'Programs designed to strengthen women economically and socially.',
-img:'images/gallery4.png'
-},
-{
-title:'Agriculture Project',
-desc:'Training farmers in climate-smart agriculture techniques.',
-img:'images/gallery5.jpg'
-},
-{
-title:'Community Engagement',
-desc:'Partnering with local communities for long-term development.',
-img:'images/gallery6.jpg'
-}
-];
-
 function showSlide(index){
-slides.forEach(s => s.classList.remove('active'));
-dots.forEach(d => d.classList.remove('active'));
+  slides.forEach(s=>s.classList.remove('active'));
+  dots.forEach(d=>d.classList.remove('active'));
 
-slides[index].classList.add('active');
-dots[index].classList.add('active');
+  slides[index].classList.add('active');
+  dots[index].classList.add('active');
 }
 
 function changeSlide(step){
-current += step;
+  current += step;
 
-if(current >= slides.length) current = 0;
-if(current < 0) current = slides.length - 1;
+  if(current >= slides.length) current = 0;
+  if(current < 0) current = slides.length - 1;
 
-showSlide(current);
+  showSlide(current);
 }
 
 function goToSlide(index){
-current = index;
-showSlide(current);
+  current = index;
+  showSlide(current);
 }
 
-/* AUTO PLAY */
 setInterval(()=>{
-changeSlide(1);
+  changeSlide(1);
 },4000);
 
-/* MODAL */
-function openModal(index){
-document.getElementById('modal').style.display='flex';
-document.getElementById('modalImg').src = data[index].img;
-document.getElementById('modalTitle').innerText = data[index].title;
-document.getElementById('modalDesc').innerText = data[index].desc;
+/* FULL IMAGE MODAL */
+function openModal(src){
+  document.getElementById('modal').style.display='flex';
+  document.getElementById('modalImg').src = src;
 }
 
 function closeModal(){
-document.getElementById('modal').style.display='none';
+  document.getElementById('modal').style.display='none';
 }
 </script>
 
