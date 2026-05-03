@@ -1,153 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support Our Cause - GreenishWorld NGO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tomato Production Training</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f7f6;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f7f6;
+  color:#222;
+  line-height:1.7;
+}
 
-    header {
-      background: #0f4e50;
-      color: #fff;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* TOP BAR */
+.top-bar{
+  background:#fff;
+  border-bottom:1px solid #eee;
+  font-size:12px;
+}
 
-    header a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 15px;
-    }
+.top-bar .container{
+  max-width:1100px;
+  margin:auto;
+  padding:6px 20px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
 
-    h1 {
-      text-align: center;
-      margin-top: 30px;
-      color: #0f4e50;
-    }
+/* HEADER */
+header{
+  background:#034d4d;
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:999;
+}
 
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+header .container{
+  max-width:1100px;
+  margin:auto;
+  padding:10px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .intro {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #333;
-      line-height: 1.6;
-    }
+header h2{
+  margin:0;
+  font-size:20px;
+}
 
-    .bank-box {
-      background: #ecf9f1;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:16px;
+  font-size:14px;
+}
 
-    .bank-box h3 {
-      margin-bottom: 15px;
-      color: #145a32;
-    }
+/* HERO */
+.hero{
+  background:url('images/tomato-training.jpg') center/cover no-repeat;
+  height:50vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
 
-    .bank-details {
-      font-size: 18px;
-      margin: 10px 0;
-      color: #222;
-    }
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
 
-    .highlight {
-      font-weight: bold;
-      color: #000;
-    }
+.hero-content{
+  position:relative;
+  z-index:2;
+  color:#fff;
+  padding:20px;
+}
 
-    .copy-btn {
-      margin-top: 15px;
-      padding: 10px 20px;
-      border: none;
-      background: #05be2d;
-      color: #fff;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+.hero h1{
+  margin:0;
+  font-size:42px;
+}
 
-    .back {
-      text-align: center;
-      margin: 30px;
-    }
+.hero p{
+  font-size:18px;
+}
 
-    .back a {
-      text-decoration: none;
-      background: #0f4e50;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
+/* CONTENT */
+.container-main{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
+}
 
-  </style>
+.card{
+  background:#fff;
+  padding:35px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  margin-bottom:30px;
+}
+
+.card h2{
+  color:#034d4d;
+  margin-top:0;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+
+.box{
+  background:#f4f7f6;
+  padding:25px;
+  border-radius:10px;
+}
+
+ul{
+  padding-left:20px;
+}
+
+li{
+  margin-bottom:10px;
+}
+
+.register{
+  text-align:center;
+  margin-top:30px;
+}
+
+.register a{
+  display:inline-block;
+  background:#0aa705;
+  color:#fff;
+  text-decoration:none;
+  padding:14px 30px;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+footer{
+  background:#222;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.top-bar .container,
+header .container{
+  flex-direction:column;
+  text-align:center;
+}
+
+nav{
+  margin-top:10px;
+}
+
+.hero{
+  height:38vh;
+}
+
+.hero h1{
+  font-size:28px;
+}
+
+}
+</style>
 </head>
 <body>
 
+<!-- TOP BAR -->
+<div class="top-bar">
+<div class="container">
+<span>📞 +234 800 000 0000</span>
+<span>✉ info@greenishworld.org</span>
+<span>📍 Nigeria</span>
+</div>
+</div>
+
+<!-- HEADER -->
 <header>
-  <h2>GreenishWorld NGO</h2>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-  </nav>
+<div class="container">
+<h2>Greenishworld</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="#">Programs</a>
+<a href="#">Gallery</a>
+<a href="#">Contact</a>
+</nav>
+</div>
 </header>
 
-<h1>Support Our Cause</h1>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+<h1>1-Day Intensive Training</h1>
+<p>Tomato Production</p>
+</div>
+</section>
 
-<div class="container">
+<!-- MAIN -->
+<div class="container-main">
 
-  <div class="intro">
-    <p>
-      Your support helps us continue our mission of promoting sustainability, empowering communities, and driving meaningful change. Every contribution, no matter how small, makes a significant impact.
-    </p>
-  </div>
+<div class="card">
+<h2>Are You Ready?</h2>
 
-  <div class="bank-box">
-    <h3>Bank Transfer Details</h3>
+<p>
+Are you ready to learn how to grow smarter, earn and farm sustainably in today's changing climate?
+</p>
 
-    <div class="bank-details">
-      <span class="highlight">Account Name:</span> Greenish Rural Empowerment and Health Foundation 
-    </div>
+<p>
+Join us for a <strong>1-Day Intensive Training on Tomato Production</strong>.
+</p>
+</div>
 
-    <div class="bank-details">
-      <span class="highlight">Bank Name:</span> United Bank For Africa (UBA)
-    </div>
+<div class="grid">
 
-    <div class="bank-details" id="accountNumber">
-      <span class="highlight">Account Number:</span> 1029951632
-    </div>
+<div class="box">
+<h2>What You Will Learn</h2>
+<ul>
+<li>Increase yield despite weather changes</li>
+<li>Reduce farming risks and losses</li>
+<li>Apply modern, sustainable farming practices</li>
+<li>Turn farming into a profitable venture</li>
+</ul>
+</div>
 
-    <button class="copy-btn" onclick="copyAccount()">Copy Account Number</button>
-  </div>
+<div class="box">
+<h2>Who Should Attend?</h2>
+<ul>
+<li>Youths and Corps Members</li>
+<li>Aspiring Agripreneurs</li>
+<li>Farmers and Agro-enthusiasts</li>
+<li>Anyone interested in climate-smart agriculture</li>
+</ul>
+</div>
 
 </div>
 
-<div class="back">
-  <a href="index.html">Back to Home</a>
+<div class="card">
+<h2>Training Details</h2>
+
+<p><strong>Date:</strong> Thursday 23rd April 2026</p>
+<p><strong>Time:</strong> 10:00 AM</p>
+<p><strong>Venue:</strong> Value Konnect Farm, Oyemekun Grammar School, Akure, Ondo State, Nigeria.</p>
+
+<div class="register">
+<a href="#">Register Now</a>
 </div>
 
-<script>
-  function copyAccount() {
-    const text = document.getElementById('accountNumber').innerText;
-    navigator.clipboard.writeText(text);
-    alert('Account details copied!');
-  }
-</script>
+</div>
+
+</div>
+
+<footer>
+<h3>&copy; 2026 Greenishworld</h3>
+</footer>
 
 </body>
 </html>
