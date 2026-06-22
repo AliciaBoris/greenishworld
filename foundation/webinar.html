@@ -19,25 +19,7 @@ line-height:1.7;
 color:#222;
 }
 
-/* HEADER */
-.hero{
-min-height:25vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-color:rgb(0, 15, 7);
-}
 
-.hero h1{
-font-size:48px;
-margin-bottom:10px;
-}
-
-.hero p{
-font-size:20px;
-}
 
 /* MAIN CARD */
 .container{
@@ -53,7 +35,7 @@ border-radius:18px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-.notice-box h2{
+.notice-box h1,h2{
 color:#034d4d;
 margin-bottom:20px;
 text-align:center;
@@ -111,7 +93,7 @@ text-decoration:underline;
 
 /* NOTE */
 .note{
-background:#fff8e6;
+background:#f8aba1;
 padding:18px;
 border-left:5px solid orange;
 border-radius:10px;
@@ -226,6 +208,41 @@ border-radius:50%;
 background:#0aa705;
 }
 
+/* FULL SCREEN MODAL */
+
+.speaker-modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.90);
+justify-content:center;
+align-items:center;
+z-index:9999;
+padding:20px;
+}
+
+.speaker-modal img{
+max-width:95%;
+max-height:95%;
+border-radius:12px;
+box-shadow:0 10px 40px rgba(255,255,255,.1);
+}
+
+/* CLOSE */
+
+.modal-close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:45px;
+color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
 </style>
 </head>
 
@@ -234,11 +251,6 @@ background:#0aa705;
 <!-- HERO -->
 <section class="hero">
 
-<div>
-<h1>Unlocking Potentials Webinar 2026</h1>
-<p>Your transformation journey begins soon.</p>
-</div>
-
 </section>
 
 <!-- CONTENT -->
@@ -246,6 +258,8 @@ background:#0aa705;
 
 <div class="notice-box">
 
+<h1>Unlocking Potentials Webinar 2026</h1>
+<p>Your transformation journey begins soon.</p>
 <h2>Webinar Reminder</h2>
 
 <p><strong>Hi Attendee,</strong></p>
@@ -302,74 +316,64 @@ PLEASE CLICK HERE
 
 <div class="panelists-gallery" id="panelGallery">
 
-<div class="speaker-card" onclick="openSpeaker(1)">
-<img src="images/panelist1.png">
+<div class="speaker-card" onclick="openModal('images/panelist1-full.png')">
+<img src="images/panelist1-thumb.png">
 <p>Panelist 1</p>
 </div>
 
-<div class="speaker-card" onclick="openSpeaker(2)">
-<img src="images/panelist2.png">
+<div class="speaker-card" onclick="openModal('images/panelist-full.png')">
+<img src="images/panelist-thumb.png">
 <p>Panelist 2</p>
 </div>
 
-<div class="speaker-card" onclick="openSpeaker(3)">
-<img src="images/panelist3.png">
+<div class="speaker-card" onclick="openModal('images/panelist3-full.png')">
+<img src="images/panelist3-thumb.png">
 <p>Panelist 3</p>
 </div>
 
-<div class="speaker-card" onclick="openSpeaker(4)">
-<img src="images/panelist4.png">
+<div class="speaker-card" onclick="openModal('images/panelist4-full.png')">
+<img src="images/panelist4-thumb.png">
 <p>Panelist 4</p>
 </div>
 
-<div class="speaker-card" onclick="openSpeaker(5)">
-<img src="images/panelist5.png">
+<div class="speaker-card" onclick="openModal('images/panelist5-full.png')">
+<img src="images/panelist5-thumb.png">
 <p>Panelist 5</p>
 </div>
 
-<div class="speaker-card" onclick="openSpeaker(6)">
-<img src="images/panelist6.png">
+<div class="speaker-card" onclick="openModal('images/panelist6-full.png')">
+<img src="images/panelist6-thumb.png">
 <p>Panelist 6</p>
 </div>
 
-<div class="speaker-card" onclick="openSpeaker(7)">
-<img src="images/panelist7.png">
+<div class="speaker-card" onclick="openModal('images/panelist7-full.png')">
+<img src="images/panelist7-thumb.png">
 <p>Panelist 7</p>
 </div>
 
-<div class="speaker-card" onclick="openSpeaker(8)">
-<img src="images/panelist8.png">
+<div class="speaker-card" onclick="openModal('images/panelist8-full.png')">
+<img src="images/panelist8-thumb.png">
 <p>Panelist 8</p>
 </div>
 
-<div class="speaker-card" onclick="openSpeaker(9)">
-<img src="images/panelist9.png">
+<div class="speaker-card" onclick="openModal('images/panelist9-full.png')">
+<img src="images/panelist9-thumb.png">
 <p>Panelist 9</p>
 </div>
 
-<div class="speaker-card" onclick="openSpeaker(10)">
-<img src="images/panelist10.png">
+<div class="speaker-card" onclick="openModal('images/panelist10-full.png')">
+<img src="images/panelist10-thumb.png">
 <p>Panelist 10</p>
 </div>
 
-<div class="speaker-card" onclick="openSpeaker(11)">
-<img src="images/panelist11.png">
+<div class="speaker-card" onclick="openModal('images/panelist2-full.png')">
+<img src="images/panelist2-thumb.png">
 <p>Panelist 11</p>
 </div>
 
-<div class="speaker-card" onclick="openSpeaker(12)">
-<img src="images/panelist12.png">
+<div class="speaker-card" onclick="openModal('images/panelist11-full.png')">
+<img src="images/panelist11-thumb.png">
 <p>Panelist 12</p>
-</div>
-
-<div class="speaker-card" onclick="openSpeaker(13)">
-<img src="images/panelist13.png">
-<p>Panelist 13</p>
-</div>
-
-<div class="speaker-card" onclick="openSpeaker(14)">
-<img src="images/panelist14.png">
-<p>Panelist 14</p>
 </div>
 
 </div>
@@ -379,6 +383,16 @@ PLEASE CLICK HERE
 </div>
 
 </section>
+
+<!-- PANELIST MODAL -->
+
+<div id="speakerModal" class="speaker-modal">
+
+<span class="modal-close" onclick="closeModal()">&times;</span>
+
+<img id="modalImage">
+
+</div>
 
 <div class="note">
 <strong>NOTE:</strong> Times are shown in UTC. Please convert to your local time zone.
@@ -400,7 +414,7 @@ Sincerely,<br>
 </div>
 
 <div class="footer">
-© 2026 Unlocking Potentials Webinar
+© 2026 Greenishworldempire
 </div>
 
 <script>
@@ -411,8 +425,18 @@ behavior: "smooth"
 });
 }
 
-function openSpeaker(number){
-alert("Speaker profile for Panelist " + number + " will open here.");
+function openModal(image){
+
+document.getElementById("speakerModal").style.display = "flex";
+
+document.getElementById("modalImage").src = image;
+
+}
+
+function closeModal(){
+
+document.getElementById("speakerModal").style.display = "none";
+
 }
 </script>
 </body>
