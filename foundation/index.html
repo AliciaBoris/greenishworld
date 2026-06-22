@@ -345,15 +345,118 @@ footer{
 
 }
 
+/* POPUP */
+
+.popup-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:fadeIn .5s ease;
+}
+
+.popup-box{
+background:white;
+padding:35px;
+max-width:600px;
+width:90%;
+border-radius:14px;
+text-align:center;
+position:relative;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+animation:slideUp .6s ease;
+}
+
+.popup-box h2{
+color:#034d4d;
+margin-bottom:20px;
+}
+
+.popup-box p{
+font-size:16px;
+margin-bottom:10px;
+line-height:1.6;
+}
+
+.close-btn{
+position:absolute;
+top:12px;
+right:18px;
+font-size:30px;
+cursor:pointer;
+}
+
+.popup-box button{
+padding:14px 22px;
+background:#0aa705;
+border:none;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
+
+@keyframes slideUp{
+from{
+transform:translateY(40px);
+opacity:0;
+}
+to{
+transform:translateY(0);
+opacity:1;
+}
+}
+
 </style>
 </head>
 <body>
+
+  <!-- WEBINAR POPUP -->
+
+<div id="webinarPopup" class="popup-overlay">
+
+  <div class="popup-box">
+
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+
+    <h2>🎯 Unlocking Potentials Webinar 2026</h2>
+
+    <p><strong>Hello Attendee,</strong></p>
+
+    <p>
+      This is to remind you that the <strong>2-Day Unlocking Potentials Webinar 2026</strong>
+      you registered for is coming up soon on Microsoft Teams.
+    </p>
+
+    <p>
+      Below are the respective dates, times and links for each day.
+    </p>
+
+    <br>
+
+    <a href="webinar.html">
+      <button>View Webinar Details</button>
+    </a>
+
+  </div>
+
+</div>
 
 <!-- WHITE SPACE ABOVE HEADER -->
 <div class="top-bar">
   <div class="container">
     <span>📞 +234 800 000 0000</span>
-    <span>✉ info@greenishworld.org</span>
+    <span>✉ comms.grehfoundation@gmail.com</span>
     <span>📍 Abia State, Nigeria</span>
   </div>
 </div>
@@ -399,7 +502,7 @@ footer{
 <h2>About Us</h2>
 
 <p class="justified-text">
-Greenish Rural Empowerment and Health Foundation is a registered nonprofit organization dedicated to advancing inclusive rural development, youth and women empowerment, and community health improvement in underserved communities across Nigeria. We work to address the interconnected challenges of poverty, unemployment, limited access to healthcare, and climate vulnerability through integrated, community-based interventions that promote sustainable development and long-term resilience.
+About Us Greenish Rural Empowerment and Health Foundation is a registered nonprofit organization dedicated to advancing inclusive rural development, youth and women empowerment, and community health improvement in underserved communities across Nigeria. We work to address the interconnected challenges of poverty, unemployment, limited access to healthcare, and climate vulnerability through integrated, community-based interventions that promote sustainable development and long-term resilience.
 <a href="about.html" style="color:#0aa705; font-weight:bold; text-decoration:none;">
 See more...
 </a>
@@ -626,6 +729,9 @@ updateCount();
 
 });
 
+function closePopup(){
+document.getElementById("webinarPopup").style.display = "none";
+}
 </script>
 
 </body>
